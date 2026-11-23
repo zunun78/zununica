@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Untuk Clarissa ❤️</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Georgia, serif;
+  min-height: 100vh;
+  color: #fff;
+  background: linear-gradient(145deg,
+    #24152f, #53334f, #a36c82);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+.card {
+  max-width: 470px;
+  width: 100%;
+  padding: 35px 25px;
+  text-align: center;
+  border-radius: 25px;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.2);
+  box-shadow: 0 15px 45px rgba(0,0,0,.3);
+  backdrop-filter: blur(12px);
+  animation: muncul 2s ease;
+}
+
+h1 {
+  color: #ffd6e5;
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.heart {
+  font-size: 48px;
+  animation: detak 1.5s infinite;
+  margin-bottom: 15px;
+}
+
+p {
+  line-height: 1.9;
+  font-size: 16px;
+  margin: 17px 0;
+}
+
+.highlight {
+  color: #ffd6e5;
+  font-style: italic;
+}
+
+button {
+  border: none;
+  padding: 13px 23px;
+  margin: 10px 5px;
+  border-radius: 30px;
+  background: #ffd6e5;
+  color: #59334b;
+  font-size: 15px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+button:hover {
+  transform: scale(1.06);
+  background: white;
+}
+
+.hidden {
+  display: none;
+}
+
+.footer {
+  margin-top: 25px;
+  font-size: 14px;
+  color: #ffe1ec;
+}
+
+.floating {
+  position: fixed;
+  bottom: -30px;
+  animation: naik 8s linear infinite;
+  opacity: .6;
+  pointer-events: none;
+}
+
+@keyframes detak {
+  50% { transform: scale(1.2); }
+}
+
+@keyframes muncul {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes naik {
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <div class="heart">❤️</div>
+
+  <h1>Untuk Clarissa</h1>
+
+  <p class="highlight">
+    "Tidak apa-apa jika hari ini kamu sedang tidak baik-baik saja."
+  </p>
+
+  <p>
+    Clarissa, aku tidak tahu seberapa berat hal
+    yang sedang kamu rasakan saat ini.
+    Mungkin ada banyak hal yang kamu pendam,
+    banyak pikiran yang melelahkan,
+    dan kesedihan yang tidak mudah kamu ceritakan.
+  </p>
+
+  <p>
+    Tapi ada satu hal yang ingin aku sampaikan:
+    <b>perasaanmu itu valid.</b>
+    Kamu berhak merasa sedih, kecewa, lelah,
+    bahkan menangis jika memang itu yang
+    kamu butuhkan.
+  </p>
+
+  <p>
+    Kamu tidak harus selalu terlihat kuat.
+    Kamu tidak harus tersenyum ketika hatimu
+    sedang terluka. Tidak perlu memaksakan
+    diri untuk baik-baik saja hanya demi
+    membuat orang lain merasa tenang.
+  </p>
+
+  <p class="highlight">
+    "Istirahatlah jika lelah, menangislah jika
+    ingin menangis. Tidak ada yang salah
+    dengan menjadi manusia yang punya perasaan."
+  </p>
+
+  <button onclick="tampilkanPesan()">
+    Baca Pesan Dariku ❤️
+  </button>
+
+  <div id="pesan" class="hidden">
+
+    <p>
+      Clarissa, aku ingin kamu tahu bahwa
+      kamu berharga, bahkan pada hari-hari
+      ketika kamu merasa tidak cukup baik.
+    </p>
+
+    <p>
+      Kamu tidak perlu menyelesaikan semuanya
+      hari ini. Pelan-pelan saja.
+      Satu langkah kecil pun tetap sebuah kemajuan.
+    </p>
+
+    <p>
+      Jika dunia terasa terlalu bising,
+      semoga kamu menemukan sedikit ketenangan.
+      Jika hatimu terasa berat, semoga ada
+      alasan kecil untuk kembali tersenyum.
+    </p>
+
+    <p>
+      Aku mungkin tidak selalu punya kata-kata
+      yang tepat untuk menghapus kesedihanmu.
+      Tapi aku ingin menjadi seseorang yang
+      bersedia mendengarkan tanpa menghakimi.
+    </p>
+
+    <p class="highlight">
+      "Kamu tidak harus kuat setiap waktu,
+      Clarissa. Kamu juga pantas dipeluk,
+      dimengerti, dan disayangi."
+    </p>
+
+    <h2 style="color:#ffd6e5;margin-top:25px;">
+      Dengan tulus ❤️
+    </h2>
+
+    <h2 style="margin-top:10px;">Zunun</h2>
+
+  </div>
+
+  <button onclick="putarMusik()" id="musicBtn">
+    ▶ Putar Musik Tenang
+  </button>
+
+  <p class="footer">
+    Dibuat dengan ketulusan dan kasih sayang<br>
+    Dari Zunun untuk Clarissa ❤️
+  </p>
+
+</div>
+
+<audio id="musik" loop>
+  <source
+  src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+  type="audio/mpeg">
+</audio>
+
+<script>
+function tampilkanPesan() {
+  document.getElementById("pesan").classList.toggle("hidden");
+}
+
+let sedangPutar = false;
+
+function putarMusik() {
+  const musik = document.getElementById("musik");
+  const tombol = document.getElementById("musicBtn");
+
+  if (!sedangPutar) {
+    musik.play().then(() => {
+      sedangPutar = true;
+      tombol.innerHTML = "❚❚ Jeda Musik";
+    }).catch(() => {
+      alert("Musik belum dapat diputar. Periksa koneksi internet.");
+    });
+  } else {
+    musik.pause();
+    sedangPutar = false;
+    tombol.innerHTML = "▶ Putar Musik Tenang";
+  }
+}
+
+// Hati melayang
+function buatHati() {
+  const hati = document.createElement("div");
+  hati.className = "floating";
+  hati.innerHTML = "❤️";
+  hati.style.left = Math.random() * 100 + "vw";
+  hati.style.fontSize = (15 + Math.random() * 20) + "px";
+  document.body.appendChild(hati);
+
+  setTimeout(() => hati.remove(), 8000);
+}
+
+setInterval(buatHati, 900);
+</script>
+
+</body>
+</html>
